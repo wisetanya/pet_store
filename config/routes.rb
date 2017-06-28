@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get 'welcome/pets'
+  resources :pets
+  root 'welcome#pets', page: "home"
 
   get 'welcome/supplies'
 
-get 'welcome/pets' => "/"
+ get 'home' => 'welcome#pets'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
